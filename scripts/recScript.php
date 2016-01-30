@@ -32,7 +32,9 @@ if (1 == 2) {
 $mainProfile = '1075680275800091';
 
 if(isset($_GET['update']) && !empty($_GET['id']) && !empty($_GET['response'])) {
-    $sql = 'INSERT INTO profile_data(profile, url_id, response) VALUES ("'.$mainProfile.'", "'.$_GET['id'].'", "'.$_GET['response'].'")';
+    $sql = 'INSERT INTO profile_data(profile, url_id, response) VALUES ("'.$mainProfile.'", "'.$_GET['id'].'", "'.$_GET['response'].'")
+            ON DUPLICATE KEY UPDATE
+            response = "'.$_GET['response'].'"';
     $result = $conn->query($sql);
 
     return;
