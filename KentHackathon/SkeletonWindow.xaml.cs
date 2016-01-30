@@ -313,7 +313,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             // Convert point to depth space.  
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skelpoint, DepthImageFormat.Resolution640x480Fps30);
-            return new Point(depthPoint.X, depthPoint.Y);
+            return new Point(depthPoint.X * 2.846, depthPoint.Y * 2.846);
         }
 
         /// <summary>
