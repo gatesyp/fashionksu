@@ -1,4 +1,5 @@
 <?php
+// ALTER TABLE `profile_data` CHANGE `url` `url_id` INT(63) UNSIGNED NOT NULL;
 session_start();
 
 require 'dbConnect.php';
@@ -122,6 +123,12 @@ and URL not IN (
 
     $result = $conn->query($sql);
     $urls = [];
+    while ($row = $result->fetch_assoc()) {
+        $urls[ $row['id'] ] = $row['url'];
+    }
+
+    $sql = 'SELECT url, id FROM profile_data LIMIT 50';
+    $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $urls[ $row['id'] ] = $row['url'];
     }
