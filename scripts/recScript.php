@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require 'dbConnect.php';
 require 'vendor/autoload.php';
 
@@ -7,15 +9,16 @@ use DirkGroenen\Pinterest\Pinterest;
 $pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
 $url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-if (isset($_GET["code"])) {
+if (isset($_GET["code"]) && empty($_SESSION['token'])) {
     $token = $pinterest->auth->getOAuthToken($_GET["code"]);
-    $pinterest->auth->setOAuthToken($token->access_token);
-
-    return;
+    $_SESSION['token'] = $token['token'];
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-if (empty($_GET['profile'])) {
+if (!empty($_SESSION['token'])) {
+    $pinterest->auth->setOAuthToken($_SESSION['token']);
+}
+
+if (empty($_SESSION['token'])) {
     $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
     echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
 
@@ -23,7 +26,7 @@ if (empty($_GET['profile'])) {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-$mainProfile = $_GET['profile'];
+$mainProfile = $pinterest->users->me()->id;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['recalculate'])) {
