@@ -6,22 +6,20 @@
         xmlns:local="clr-namespace:KentHackathon"
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1280" Width="720">
-    <k:KinectRegion Name="kinectRegion">
+        Title="MainWindow" Height="1366" Width="768">
+    <k:KinectRegion Name="kinectRegion" Margin="65, 85, 65, 70">
         <Grid x:Name="MainFrameGrid" Background="Black" k:KinectTileButton.Click="MainFrameGrid_Click">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <k:KinectUserViewer Grid.Row="0" Grid.ColumnSpan="2"  k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            <k:KinectUserViewer Grid.Row="2"  k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,5.233" />
 
-            <k:KinectSensorChooserUI Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Name="sensorChooserUi" />
-            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Name="tile1" Background="LightBlue" />
+            <k:KinectSensorChooserUI Grid.Row="0" VerticalAlignment="Top" Name="sensorChooserUi" />
+            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="1"  Name="tile1" Background="Red" Content="Tap to Login" FontSize="75" FontStyle="Oblique" Margin="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         </Grid>
     </k:KinectRegion>
