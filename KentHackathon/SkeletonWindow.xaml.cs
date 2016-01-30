@@ -317,7 +317,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             double y = (depthPoint.Y * 2.846);
             if (x < 0)
             {
-                return new Point(0, 0);
+                return new Point();
             }
             return new Point(x, y);
         }
