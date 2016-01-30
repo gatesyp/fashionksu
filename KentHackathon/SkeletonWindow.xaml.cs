@@ -20,8 +20,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         private const double ScaleX = 2.846;
         private const double OffsetX = -526.592;
 
-        private const double ScaleY = 2.846;
-        private const double OffsetY = 0;
+        private const double ScaleY = 2.846 * 1.3;
+        private const double OffsetY = -470;
         /// <summary>
         /// Width of output drawing
         /// </summary>
