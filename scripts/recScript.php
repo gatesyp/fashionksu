@@ -10,22 +10,22 @@ $url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 if (isset($_GET["code"])) {
     $token = $pinterest->auth->getOAuthToken($_GET["code"]);
     $pinterest->auth->setOAuthToken($token->access_token);
+
+    return;
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 if (empty($_GET['profile'])) {
     $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
     echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
 
     return;
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 $mainProfile = $_GET['profile'];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
 if (isset($_GET['recalculate'])) {
 
     $agreements = [];
@@ -38,8 +38,6 @@ if (isset($_GET['recalculate'])) {
         $profiles[ $row['profile'] ] = [];
     }
 
-// grab: l1 ^ L2 + D1 ^ D2
-// magnitude of ratings which users are similar on
     $sql = "SELECT FIRST.profile AS similarPerson, COUNT( * ) as likes
 FROM profile_data
 FIRST INNER JOIN profile_data
@@ -51,7 +49,6 @@ GROUP BY similarPerson
 ORDER BY similarPerson DESC";
     $result = $conn->query($sql);
 
-// now process the result set and count the occurrences of each person, as compared to our original person P
     if (!$result = $conn->query($sql)) {
         return;
     }
@@ -60,8 +57,6 @@ ORDER BY similarPerson DESC";
         $profiles[ $row['similarPerson'] ]['likes'] = $row['likes'];
     }
 
-// grab: L1 ^ D2 + L2 ^ D1
-// magnitude of ratings which users disagree on
     $sql = "SELECT COUNT( * ) as conflict, FIRST.profile AS similarPerson
 FROM profile_data
 FIRST INNER JOIN profile_data
@@ -72,7 +67,6 @@ AND SECOND.response != FIRST.response
 GROUP BY similarPerson
 ORDER BY similarPerson DESC";
 
-// now process the result set and count occurrences of each person, as compared to our original person P
     if (!$result = $conn->query($sql)) {
         return;
     }
@@ -81,10 +75,6 @@ ORDER BY similarPerson DESC";
         $profiles[ $row['similarPerson'] ]['conflict'] = $row['conflict'];
     }
 
-// denominator
-// grab: l1 U L2 U D1 U D2
-
-    $denom = [];
     $sql = "SELECT COUNT( * ) AS frequency, profile AS name
 FROM profile_data
 GROUP BY profile
@@ -109,9 +99,9 @@ ORDER BY profile DESC ";
         $result = $conn->query($sql);
     }
 }
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['get_suggests'])) {
     $sql = 'SELECT url FROM profile_data as first
 WHERE profile = (
@@ -131,8 +121,6 @@ and URL not IN (
         $urls[] = $row['url'];
     }
 
-    var_dump($urls);
-    exit;
+    echo json_encode($urls);
 }
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
