@@ -1,18 +1,44 @@
 <?php
 require 'dbConnect.php';
-$sql = "SELECT first.profile AS similarPerson, second.response AS sharedResponse, second.url AS sharedURL
+// grab: l1 ^ L2 + D1 ^ D2
+// magnitude of ratings which users are similar on
+$sql = "SELECT FIRST.profile AS similarPerson, SECOND.response AS sharedResponse, SECOND.url AS sharedURL
 FROM profile_data
 FIRST INNER JOIN profile_data
-SECOND ON second.profile !=  '1022691251124985'
-AND first.profile !=  '1022691251124985'
-AND second.url = first.url
-AND second.response = first.response";
+SECOND ON SECOND.profile !=  '1022691251124985'
+AND FIRST.profile !=  '1022691251124985'
+AND SECOND.url = FIRST.url
+AND SECOND.response = FIRST.response";
 
-// var_dump($sql);
-// $sql = "SELECT first.* FROM profile_data AS first WHERE first.profile = \'1022691251124985\' and first.response = (select response from profile_data AS second where second.profile != first.profile and second.url = first.url and second.response = first.response)";
-  if($result = $conn -> query($sql)){
-    var_dump($result -> fetch_object());
-    while($row = $result -> fetch_object()){
-      $id = $row -> id;
-    }
+// now process the result set and count the occurrences of each person, as compared to our original person P
+
+
+
+
+// grab: L1 ^ D2 + L2 ^ D1
+// magnitude of ratings which users disagree on
+$sql = "SELECT FIRST.profile AS similarPerson, SECOND.response AS sharedResponse, SECOND.url AS sharedURL
+FROM profile_data
+FIRST INNER JOIN profile_data
+SECOND ON SECOND.profile !=  '1022691251124985'
+AND FIRST.profile !=  '1022691251124985'
+AND SECOND.url = FIRST.url
+AND SECOND.response != FIRST.response";
+
+// now process the result set and count occurrences of each person, as compared to our original person P
+
+// flip sign on the magnitudes
+
+// add the two magnitudes to get the final numerator
+
+
+// denominator:
+// grab: l1 U L2 U D1 U D2
+$sql = "SELECT * WHERE profile = 'zxczxczxc' and profile = 'vbnvbnvbn'";
+$total_sum = 0;
+if($result = $conn -> query($sql)){
+  while($row = $result -> fetch_object()){
+    // count how many rows are returned for each profile
+    $total_sum += 1;
   }
+}
