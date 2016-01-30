@@ -109,7 +109,9 @@ ORDER BY profile DESC ";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['get_suggests'])) {
-    $sql = 'SELECT url, id FROM profile_data as first
+    $sql = 'SELECT first.url_id, pics.url as url
+FROM profile_data as first,
+    pictures as pics
 WHERE profile = (
     SELECT profile FROM `similarity_index`
     WHERE main_profile = "' . $mainProfile . '"
@@ -117,17 +119,19 @@ WHERE profile = (
     LIMIT 1
 )
 and response = 1
-and URL not IN (
-	SELECT url FROM profile_data WHERE profile = "' . $mainProfile . '"
-)';
+and url_id not IN (
+	SELECT url_id FROM profile_data WHERE profile = "' . $mainProfile . '"
+)
+and url_id = pics.id
+';
 
     $result = $conn->query($sql);
     $urls = [];
     while ($row = $result->fetch_assoc()) {
-        $urls[ $row['id'] ] = $row['url'];
+        $urls[ $row['url_id'] ] = $row['url'];
     }
 
-    $sql = 'SELECT url, id FROM profile_data LIMIT 50';
+    $sql = 'SELECT url, id from pictures LIMIT 50';
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $urls[ $row['id'] ] = $row['url'];
