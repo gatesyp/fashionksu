@@ -24,5 +24,10 @@ namespace KentHackathon
         {
             InitializeComponent();
         }
+
+        private void MainFrameGrid_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

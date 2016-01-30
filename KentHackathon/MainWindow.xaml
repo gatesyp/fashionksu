@@ -4,10 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KentHackathon"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <!-- test 2 lol from chris ha-->
-        
-    </Grid>
+        Title="MainWindow" Height="1280" Width="720">
+    <k:KinectRegion>
+        <Grid x:Name="MainFrameGrid" Background="Black" k:KinectTileButton.Click="MainFrameGrid_Click">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="0" Name="tile1" Background="LightBlue" />
+
+        </Grid>
+    </k:KinectRegion>
 </Window>
