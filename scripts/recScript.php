@@ -1,15 +1,28 @@
 <?php
-// ALTER TABLE `similarity_index` ADD UNIQUE `profile_index`(`main_profile`, `profile`);
-
 require 'dbConnect.php';
+require 'vendor/autoload.php';
+
+use DirkGroenen\Pinterest\Pinterest;
+
+$pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
+$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+if (isset($_GET["code"])) {
+    $token = $pinterest->auth->getOAuthToken($_GET["code"]);
+    $pinterest->auth->setOAuthToken($token->access_token);
+}
 
 if (empty($_GET['profile'])) {
-    echo 'Missing profile data';
+    $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
+    echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
 
     return;
 }
 
 $mainProfile = $_GET['profile'];
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
