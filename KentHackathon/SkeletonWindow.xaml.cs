@@ -17,6 +17,11 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     public partial class MainWindow : Window
     {
 
+        private Point boxTopRight = new Point();
+        private Point boxTopLeft = new Point();
+        private Point boxBotRight = new Point();
+        private Point boxBotLeft = new Point();
+
         private const double ScaleX = 2.846;
         private const double OffsetX = -596.592;
         private const double ScaleX2 = 1.2;
@@ -232,9 +237,10 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     foreach (Skeleton skel in skeletons)
                     {
                         RenderClippedEdges(skel, dc);
+                        setBoundingBox(skel);
 
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
-                        {
+                        { 
                             this.DrawBonesAndJoints(skel, dc);
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
@@ -310,6 +316,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
+
+            drawingContext.DrawRectangle(this.trackedJointBrush, null, new Rect(boxTopLeft, boxBotRight));
         }
 
         /// <summary>
@@ -372,6 +380,22 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             if (null != this.sensor)
             {
             }
+        }
+
+        private void setBoundingBox(Skeleton skeleton)
+        {
+            boxTopLeft.X = skeleton.Joints[JointType.ShoulderLeft].Position.X;
+            boxTopLeft.Y = skeleton.Joints[JointType.ShoulderCenter].Position.Y;
+
+            boxTopRight.X = skeleton.Joints[JointType.ShoulderRight].Position.X;
+            boxTopRight.Y = boxTopLeft.Y;
+
+            boxBotLeft.X = boxTopLeft.X;
+            boxBotLeft.Y = (skeleton.Joints[JointType.HipLeft].Position.Y + skeleton.Joints[JointType.HipRight].Position.Y) / 2;
+
+            boxBotRight.X = boxTopRight.X;
+            boxBotRight.Y = boxBotLeft.Y;
+
         }
     }
 }
