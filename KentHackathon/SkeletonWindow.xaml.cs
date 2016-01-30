@@ -16,6 +16,12 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private const double ScaleX = 2.846;
+        private const double OffsetX = -526.592;
+
+        private const double ScaleY = 2.846;
+        private const double OffsetY = 0;
         /// <summary>
         /// Width of output drawing
         /// </summary>
@@ -296,7 +302,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     drawBrush = this.inferredJointBrush;
                 }
 
-                if (drawBrush != null)
+                if (drawBrush != null)// && 0 < joint.Position.X * ScaleX + OffsetX && joint.Position.X * ScaleX + OffsetX < 768)
                 {
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
@@ -313,12 +319,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             // Convert point to depth space.  
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skelpoint, DepthImageFormat.Resolution640x480Fps30);
-            double x = (depthPoint.X * 2.846) - 526.592;
-            double y = (depthPoint.Y * 2.846);
-            if (x < 0)
-            {
-                return new Point();
-            }
+            double x = depthPoint.X * ScaleX + OffsetX;
+            double y = depthPoint.Y * ScaleY + OffsetY;
             return new Point(x, y);
         }
 
@@ -354,7 +356,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             {
                 drawPen = this.trackedBonePen;
             }
-
+           // if(0 < joint0.Position.X * ScaleX + OffsetX && joint0.Position.X * ScaleX + OffsetX < 768 && 0 < joint1.Position.X * ScaleX + OffsetX && joint1.Position.X * ScaleX + OffsetX < 768)
             drawingContext.DrawLine(drawPen, this.SkeletonPointToScreen(joint0.Position), this.SkeletonPointToScreen(joint1.Position));
         }
 
