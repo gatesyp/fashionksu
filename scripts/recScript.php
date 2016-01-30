@@ -1,9 +1,20 @@
 <?php
 require 'dbConnect.php';
+
+$agreements = [];
+$conflicts = [];
+$profiles = [];
+
+$sql = 'SELECT DISTINCT profile from profile_data';
+$result = $conn->query($sql);
+while ($row = $result->fetch_assoc()) {
+    $profiles[$row['profile']] = [];
+}
+
 // grab: l1 ^ L2 + D1 ^ D2
 // magnitude of ratings which users are similar on
 $mainProfile = "1075680275800091";
-$sql = "SELECT COUNT( * ) as frequency , FIRST.profile AS similarPerson,  SECOND.response AS sharedResponse, SECOND.url AS sharedURL
+$sql = "SELECT FIRST.profile AS similarPerson, COUNT( * ) as likes
 FROM profile_data
 FIRST INNER JOIN profile_data
 SECOND ON FIRST.profile !=  '" . $mainProfile . "'
@@ -12,24 +23,20 @@ AND SECOND.url = FIRST.url
 AND SECOND.response = FIRST.response
 GROUP BY similarPerson
 ORDER BY similarPerson DESC";
+$result = $conn->query($sql);
 
-$agreements = [];
-$i = 0;
 // now process the result set and count the occurrences of each person, as compared to our original person P
-if ($result = $conn->query($sql)) {
-    while ($row = $result->fetch_object()) {
-        $temp = ['profile' => $row->similarPerson, 'frequency' => $row->frequency];
-        $agreements[ $i ] = $temp;
-        $i += 1;
-    }
+if (!$result = $conn->query($sql)) {
+    return;
 }
 
+while ($row = $result->fetch_assoc()) {
+    $profiles[$row['similarPerson']]['likes'] = $row['likes'];
+}
 
-$conflicts = [];
-$i = 0;
 // grab: L1 ^ D2 + L2 ^ D1
 // magnitude of ratings which users disagree on
-$sql = "SELECT COUNT( * ) as frequency, FIRST.profile AS similarPerson,  SECOND.response AS sharedResponse, SECOND.url AS sharedURL
+$sql = "SELECT COUNT( * ) as conflict, FIRST.profile AS similarPerson
 FROM profile_data
 FIRST INNER JOIN profile_data
 SECOND ON FIRST.profile !=  '" . $mainProfile . "'
@@ -40,14 +47,15 @@ GROUP BY similarPerson
 ORDER BY similarPerson DESC";
 
 // now process the result set and count occurrences of each person, as compared to our original person P
-
-if ($result = $conn->query($sql)) {
-    while ($row = $result->fetch_object()) {
-        $temp = ['profile' => $row->similarPerson, 'frequency' => $row->frequency];
-        $conflicts[ $i ] = $temp;
-        $i += 1;
-    }
+if (!$result = $conn->query($sql)) {
+    return;
 }
+
+while ($row = $result->fetch_assoc()) {
+    $profiles[$row['similarPerson']]['conflict'] = $row['conflict'];
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // denominator
 // grab: l1 U L2 U D1 U D2
@@ -67,8 +75,8 @@ if ($result = $conn->query($sql)) {
 }
 
 // add the two magnitudes to get the final numerator, and divide by denominator to get similarity indices
-// var_dump($agreements);
-// var_dump($conflicts);
+var_dump($profiles);
+exit;
 $vals = [];
 $i = 0;
 foreach ($agreements as $key => $value) {
