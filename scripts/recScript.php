@@ -31,6 +31,13 @@ if (1 == 2) {
 
 $mainProfile = '1075680275800091';
 
+if(isset($_GET['update']) && !empty($_GET['id']) && !empty($_GET['response'])) {
+    $sql = 'INSERT INTO profile_data(profile, url_id, response) VALUES ("'.$mainProfile.'", "'.$_GET['id'].'", "'.$_GET['response'].'")';
+    $result = $conn->query($sql);
+
+    return;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['recalculate'])) {
 
@@ -131,12 +138,12 @@ and url_id = pics.id
         $urls[ $row['url_id'] ] = $row['url'];
     }
 
-    $sql = 'SELECT url, id from pictures LIMIT 50';
+    $sql = 'SELECT url, id from pictures LIMIT 20';
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $urls[ $row['id'] ] = $row['url'];
     }
 
-    echo json_encode($urls);
+    echo json_encode(['suggestions' => $urls]);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
