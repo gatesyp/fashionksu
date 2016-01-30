@@ -10,6 +10,10 @@ namespace KentHackathon.ViewModels
 {
     class AppViewModel : ObservableObject
     {
+
+        private void MainFrameGrid_Click(object sender, ExecutedRoutedEventHandler e)
+        {
+        }
         private ICommand _changePageCommand;
 
         private IPageViewModel _currentPageViewModel;
@@ -64,7 +68,7 @@ namespace KentHackathon.ViewModels
             }
         }
 
-        private void ChangeViewModel(IPageViewModel viewModel)
+        public void ChangeViewModel(IPageViewModel viewModel)
         {
             if (!PageViewModels.Contains(viewModel))
                 PageViewModels.Add(viewModel);

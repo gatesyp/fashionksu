@@ -95,5 +95,11 @@ namespace KentHackathon.Views
         {
 
         }
+
+        private void tile1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

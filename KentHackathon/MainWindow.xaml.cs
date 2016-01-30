@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KentHackathon.ViewModels;
 
 namespace KentHackathon
 {
@@ -93,7 +94,7 @@ namespace KentHackathon
 
         private void MainFrameGrid_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

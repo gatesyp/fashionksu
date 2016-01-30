@@ -15,6 +15,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <k:KinectUserViewer Grid.Row="0" k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            <Button Name="Button" Width="Auto" Content="Button" FontSize="50" />
             <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
                 <Image Name="Image" Width="640" Height="480" />
             </Viewbox>

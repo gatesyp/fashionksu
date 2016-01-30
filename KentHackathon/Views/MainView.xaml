@@ -21,7 +21,7 @@
             <k:KinectUserViewer Grid.Row="0" Grid.ColumnSpan="2"  k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
             <k:KinectSensorChooserUI Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Name="sensorChooserUi" />
-            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Name="tile1" Background="LightBlue" />
+            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Name="tile1" Background="LightBlue" Click="tile1_Click" />
 
         </Grid>
     </k:KinectRegion>
