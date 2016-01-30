@@ -76,7 +76,26 @@ foreach ($agreements as $key => $value) {
   $vals[$i] = (floatval($value["frequency"]) - floatval($conflicts[$i]["frequency"])) / floatval($denom[$i]["frequency"]);
   $i += 1;
 }
-var_dump($vals);
+// var_dump($vals);
 
 //insert the calculated similarity indices
-$sql ="INSERT INTO similarity_index(main_profile, profile, index) VALUES(" .  .")";
+$i = 0;
+foreach ($vals as $key => $rating) {
+  // search to see if key exists
+  $sql = "SELECT id FROM similarity_index WHERE main_profile = '". $mainProfile . "' and profile = '" . $conflicts[$i]["profile"] . "'";
+  // var_dump($sql);
+  // if exists perform update
+  if($result = $conn -> query($sql)){
+    while($row = $result -> fetch_object()){
+      $id = $row -> id;
+      echo "going to do an update";
+    }
+  }else{
+    $sql ="INSERT INTO similarity_index(main_profile, profile, rating) VALUES('". $mainProfile . "', '" . $conflicts[$i]["profile"] . "', " . $rating . ")";
+    var_dump($sql);
+    if($result = $conn -> query($sql)){
+      echo "inserted good";
+    }
+  }
+  $i += 1;
+}
