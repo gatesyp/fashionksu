@@ -6,27 +6,29 @@ require 'vendor/autoload.php';
 
 use DirkGroenen\Pinterest\Pinterest;
 
-$pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
-$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+if (1 == 2) {
+    $pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
+    $url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-if (isset($_GET["code"]) && empty($_SESSION['token'])) {
-    $token = $pinterest->auth->getOAuthToken($_GET["code"]);
-    $_SESSION['token'] = $token['token'];
+    if (isset($_GET["code"]) && empty($_SESSION['token'])) {
+        $token = $pinterest->auth->getOAuthToken($_GET["code"]);
+        $_SESSION['token'] = $token['token'];
+    }
+
+    if (!empty($_SESSION['token'])) {
+        $pinterest->auth->setOAuthToken($_SESSION['token']);
+    }
+
+    if (empty($_SESSION['token'])) {
+        $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
+        echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
+
+        return;
+    }
+    $mainProfile = $pinterest->users->me()->id;
 }
 
-if (!empty($_SESSION['token'])) {
-    $pinterest->auth->setOAuthToken($_SESSION['token']);
-}
-
-if (empty($_SESSION['token'])) {
-    $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
-    echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
-
-    return;
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-$mainProfile = $pinterest->users->me()->id;
+$mainProfile = '1075680275800091';
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['recalculate'])) {
@@ -106,7 +108,7 @@ ORDER BY profile DESC ";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['get_suggests'])) {
-    $sql = 'SELECT url FROM profile_data as first
+    $sql = 'SELECT url, id FROM profile_data as first
 WHERE profile = (
     SELECT profile FROM `similarity_index`
     WHERE main_profile = "' . $mainProfile . '"
@@ -121,7 +123,7 @@ and URL not IN (
     $result = $conn->query($sql);
     $urls = [];
     while ($row = $result->fetch_assoc()) {
-        $urls[] = $row['url'];
+        $urls[ $row['id'] ] = $row['url'];
     }
 
     echo json_encode($urls);
