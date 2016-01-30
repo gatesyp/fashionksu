@@ -7,9 +7,10 @@
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         mc:Ignorable="d"
         Title="MainWindow" Height="1280" Width="720">
-    <k:KinectRegion>
+    <k:KinectRegion Name="kinectRegion">
         <Grid x:Name="MainFrameGrid" Background="Black" k:KinectTileButton.Click="MainFrameGrid_Click">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -17,7 +18,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="0" Name="tile1" Background="LightBlue" />
+            <k:KinectUserViewer Grid.Row="0" Grid.ColumnSpan="2"  k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+            <k:KinectSensorChooserUI Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Name="sensorChooserUi" />
+            <k:KinectTileButton Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="0" Name="tile1" Background="LightBlue" />
 
         </Grid>
     </k:KinectRegion>
