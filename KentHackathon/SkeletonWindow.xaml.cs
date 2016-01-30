@@ -19,12 +19,12 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         /// <summary>
         /// Width of output drawing
         /// </summary>
-        private const float RenderWidth = 640.0f;
+        private const float RenderWidth = 768.0f;
 
         /// <summary>
         /// Height of our output drawing
         /// </summary>
-        private const float RenderHeight = 480.0f;
+        private const float RenderHeight = 1366.0f;
 
         /// <summary>
         /// Thickness of drawn joint lines
