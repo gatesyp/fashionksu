@@ -317,7 +317,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 }
             }
 
-            drawingContext.DrawRectangle(this.trackedJointBrush, null, new Rect(boxTopLeft, boxBotRight));
+            drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
         }
 
         /// <summary>
@@ -395,6 +395,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
+
+            boxTopRight.X = boxTopRight.X;
 
         }
     }
