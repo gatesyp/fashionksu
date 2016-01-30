@@ -76,7 +76,7 @@ foreach ($agreements as $key => $value) {
   $vals[$i] = (floatval($value["frequency"]) - floatval($conflicts[$i]["frequency"])) / floatval($denom[$i]["frequency"]);
   $i += 1;
 }
-
 var_dump($vals);
 
-// var_dump($numerator);
+//insert the calculated similarity indices
+$sql ="INSERT INTO similarity_index(main_profile, profile, index) VALUES(" .  .")";
