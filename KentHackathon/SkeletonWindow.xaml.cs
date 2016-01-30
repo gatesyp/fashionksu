@@ -384,14 +384,21 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
         private void setBoundingBox(Skeleton skeleton)
         {
-            boxTopLeft.X = skeleton.Joints[JointType.ShoulderLeft].Position.X;
-            boxTopLeft.Y = skeleton.Joints[JointType.ShoulderCenter].Position.Y;
+            DepthImagePoint shoulderLeftDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.ShoulderLeft].Position, DepthImageFormat.Resolution640x480Fps30);
+            DepthImagePoint shoulderRightDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.ShoulderRight].Position, DepthImageFormat.Resolution640x480Fps30);
+            DepthImagePoint shoulderCenterDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.ShoulderCenter].Position, DepthImageFormat.Resolution640x480Fps30);
+            DepthImagePoint HipLeftDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.HipLeft].Position, DepthImageFormat.Resolution640x480Fps30);
+            DepthImagePoint HipRightDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.HipRight].Position, DepthImageFormat.Resolution640x480Fps30);
 
-            boxTopRight.X = skeleton.Joints[JointType.ShoulderRight].Position.X;
+
+            boxTopLeft.X = (shoulderLeftDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
+            boxTopLeft.Y = shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY;
+
+            boxTopRight.X = (shoulderRightDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
             boxTopRight.Y = boxTopLeft.Y;
 
             boxBotLeft.X = boxTopLeft.X;
-            boxBotLeft.Y = (skeleton.Joints[JointType.HipLeft].Position.Y + skeleton.Joints[JointType.HipRight].Position.Y) / 2;
+            boxBotLeft.Y = ((shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY) + (shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY)) /2;
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
