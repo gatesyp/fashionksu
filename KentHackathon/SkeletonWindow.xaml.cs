@@ -10,18 +10,20 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     using System.Windows;
     using System.Windows.Media;
     using Microsoft.Kinect;
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    using System;
+    using System.Diagnostics;    /// <summary>
+                                 /// Interaction logic for MainWindow.xaml
+                                 /// </summary>
     public partial class MainWindow : Window
     {
 
         private const double ScaleX = 2.846;
-        private const double OffsetX = -526.592;
+        private const double OffsetX = -596.592;
+        private const double ScaleX2 = 1.2;
 
         private const double ScaleY = 2.846 * 1.3;
-        private const double OffsetY = -470;
+        private const double OffsetY = -475;
+        private const double depthScale = 1960;
         /// <summary>
         /// Width of output drawing
         /// </summary>
@@ -93,7 +95,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         public MainWindow()
         {
             InitializeComponent();
-            this.sensor.ElevationAngle = 0;
         }
 
         /// <summary>
@@ -268,6 +269,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             this.DrawBone(skeleton, drawingContext, JointType.Spine, JointType.HipCenter);
             this.DrawBone(skeleton, drawingContext, JointType.HipCenter, JointType.HipLeft);
             this.DrawBone(skeleton, drawingContext, JointType.HipCenter, JointType.HipRight);
+            //Debug.Print(skeleton.Joints[JointType.HipCenter].Position.Z.ToString());
 
             // Left Arm
             this.DrawBone(skeleton, drawingContext, JointType.ShoulderLeft, JointType.ElbowLeft);
@@ -320,8 +322,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             // Convert point to depth space.  
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skelpoint, DepthImageFormat.Resolution640x480Fps30);
-            double x = depthPoint.X * ScaleX + OffsetX;
-            double y = depthPoint.Y * ScaleY + OffsetY;
+            double x = (depthPoint.X * ScaleX + OffsetX) * ScaleX2;
+            double y = depthPoint.Y * ScaleY * (Math.Pow((depthScale/depthPoint.Depth), .000000000000000001)) + OffsetY;
             return new Point(x, y);
         }
 
