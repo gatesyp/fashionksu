@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:KentHackathon"
              xmlns:k="http://schemas.microsoft.com/kinect/2013"
              mc:Ignorable="d" 
-             d:DesignHeight="1280" d:DesignWidth="720">
+             d:DesignHeight="1366" d:DesignWidth="768">
     <k:KinectRegion Name="kinectRegion">
         <Grid x:Name="MainFrameGrid" Background="Black">
             <Grid.RowDefinitions>
