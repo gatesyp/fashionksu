@@ -93,6 +93,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         public MainWindow()
         {
             InitializeComponent();
+            this.sensor.ElevationAngle = 0;
         }
 
         /// <summary>
@@ -302,7 +303,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     drawBrush = this.inferredJointBrush;
                 }
 
-                if (drawBrush != null)// && 0 < joint.Position.X * ScaleX + OffsetX && joint.Position.X * ScaleX + OffsetX < 768)
+                if (drawBrush != null)
                 {
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
@@ -356,7 +357,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             {
                 drawPen = this.trackedBonePen;
             }
-           // if(0 < joint0.Position.X * ScaleX + OffsetX && joint0.Position.X * ScaleX + OffsetX < 768 && 0 < joint1.Position.X * ScaleX + OffsetX && joint1.Position.X * ScaleX + OffsetX < 768)
             drawingContext.DrawLine(drawPen, this.SkeletonPointToScreen(joint0.Position), this.SkeletonPointToScreen(joint1.Position));
         }
 
