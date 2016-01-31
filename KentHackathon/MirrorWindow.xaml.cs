@@ -21,9 +21,10 @@ namespace KentHackathon
     using Microsoft.Kinect.Toolkit.Controls;
     using System.Collections.Generic;
     using Microsoft.Kinect.Toolkit;
-    using System.Windows.Data;/// <summary>
-                              /// Interaction logic for MainWindow.xaml
-                              /// </summary>
+    using System.Windows.Data;
+    using System.Windows.Media.Animation;/// <summary>
+                                         /// Interaction logic for MainWindow.xaml
+                                         /// </summary>
     public partial class MirrorWindow : Window
     {
         private IList<Article> ArticleList = new List<Article>();
@@ -520,6 +521,12 @@ namespace KentHackathon
 
 
                 layoutGrid.Children.Remove(catalog);
+                DoubleAnimation da = new DoubleAnimation();
+                da.From = 0.2;
+                da.To = 1;
+                da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+                Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
+                viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
             }
 
         }
@@ -531,6 +538,12 @@ namespace KentHackathon
 
         private void Catalog_On_Click(object sender, RoutedEventArgs e)
         {
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 0.6;
+            da.To = 0.2;
+            da.Duration = new Duration(TimeSpan.FromSeconds(0.4));
+            Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
+            viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
 
             layoutGrid.Children.Add(catalog);
             Grid.SetRowSpan(catalog, 2);

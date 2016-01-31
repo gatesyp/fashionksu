@@ -44,14 +44,14 @@
         <Grid Name="layoutGrid" Margin="65, 85, 65, 70" k:KinectTileButton.Click="Grid_Click">
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="14*"/>
-                <RowDefinition/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="3*"/>
 
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Center" Name="viewingbox">
                 <Image Name="Image" Width="Auto" Height="Auto"/>
             </Viewbox>
-            <k:KinectTileButton Grid.Row="1" Background="Goldenrod" Height="Auto" Width="Auto" Click="Catalog_On_Click" Name="Cat_Btn">Catalog</k:KinectTileButton>
+            <k:KinectTileButton Grid.Row="1" Background="Gold" Foreground="Blue" Height="Auto" Width="Auto" Margin="0, 0, 0, 25" Click="Catalog_On_Click" FontSize="90" FontStyle="Italic" FontWeight="ExtraBold" Name="Cat_Btn">CATALOG</k:KinectTileButton>
 
         </Grid>
     </k:KinectRegion>
