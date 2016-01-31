@@ -137,45 +137,20 @@ and url_id = pics.id
     $result = $conn->query($sql);
     $urls = [];
     while ($row = $result->fetch_assoc()) {
-        $urls[ $row['url_id'] ] = $row['url'];
+        $urls[ $row['url_id'] ] = ['url' => $row['url'], 'id' => $row['url_id']];
     }
 
     $sql = 'SELECT url, id from pictures LIMIT 20';
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        $urls[ $row['id'] ] = $row['url'];
+        $urls[ $row['id'] ] = ['url' => $row['url'], 'id' => $row['id']];
     }
 
-    echo json_encode(['suggestionData' => $urls]);
+    header('Content-Type: application/json');
+    echo json_encode(
+        [
+            'suggestionData' => ['results' => array_values($urls)],
+        ]
+    );
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-
-
-{
-   "suggestionData":{
-      "results":[
-         {
-            "id":117,
-            "url":"blahblah"
-         },
-         {
-            "id":521,
-            "url":"blahblah"
-         },
-         {
-            "id":142,
-            "url":"blahblah"
-         },
-         {
-            "id":133,
-            "url":"blahblah"
-         }
-      ]
-   }
-}
-
-
-
-*/
