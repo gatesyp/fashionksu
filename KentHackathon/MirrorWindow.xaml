@@ -49,7 +49,7 @@
 
             </Grid.RowDefinitions>
             <k:KinectTileButton Grid.Row="1" Background="Goldenrod" Height="Auto" Width="Auto" Click="Catalog_On_Click" Name="Cat_Btn">Catalog</k:KinectTileButton>
-            <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
+            <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center" Name="viewingbox">
                 <Image Name="Image" Width="Auto" Height="Auto"/>
             </Viewbox>
         </Grid>

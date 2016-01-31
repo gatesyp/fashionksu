@@ -8,13 +8,18 @@ using Newtonsoft.Json;
 // useage: 
 // string domain = "stoh.io/recScript.php?";
 // string getParam; 
-// can only be get_suggests or recalculate
+// can only be get_suggests or recalculate or update
 // DataController.DataController myController = new DataController();
 // string responseUrl = myController.MakeRequest(domain + getParam);
 // IList<SearchResult> myList = myController.ParseJson(responseUrl);
 // now you have a list of all the results. 
 // to access: myList.url;
 //            myList.id;
+//--if !null--myList.response;
+// for update: 
+// string getParam = "update&id=" + myList.id + "&response=" + myList.response; 
+// string responseUrl = myController.MakeRequest(domain + getParam);
+
 namespace KentHackathon
 {
     public class DataController

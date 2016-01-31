@@ -10,11 +10,17 @@ namespace KentHackathon
     {
         public string id { get; set; }
         public string url { get; set; }
+        public string response { get; set; }
+
         public SearchResult(string id, string url)
         {
             this.id = id;
             this.url = url;
 
+        }
+        public SearchResult(string response)
+        {
+            this.response = response;
         }
 
 
