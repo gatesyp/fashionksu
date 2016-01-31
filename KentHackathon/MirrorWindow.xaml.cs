@@ -18,16 +18,15 @@ namespace KentHackathon
     using System.Text;
     using Newtonsoft.Json;
     using System.Windows.Controls;
-    using Microsoft.Kinect.Toolkit.Controls;/// <summary>
-                                            /// Interaction logic for MainWindow.xaml
-                                            /// </summary>
+    using Microsoft.Kinect.Toolkit.Controls;
+    using System.Collections.Generic;/// <summary>
+                         /// Interaction logic for MainWindow.xaml
+                         /// </summary>
     public partial class MirrorWindow : Window
     {
+        private IList<Article> ArticleList = new List<Article>();
 
         private System.Drawing.Bitmap shirt;
-
-        private JToken token;
-        private String[] images;
         private Catalog catalog = new Catalog();
 
         private Point boxTopRight = new Point();
@@ -118,15 +117,16 @@ namespace KentHackathon
         {
 
             InitializeComponent();
-            HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?get_suggests") as HttpWebRequest;
-
-            //request.Accept = "application/xrds+xml";  
-            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            // WebHeaderCollection header = response.Headers;
-
-            shirt = new System.Drawing.Bitmap(new System.IO.MemoryStream(new System.Net.WebClient().DownloadData("https://stoh.io/suit.jpg")));
-
+            string domain = "https://stoh.io/recScript.php?";
+             string getParam = "get_suggests"; 
+            // can only be get_suggests or recalculate
+             DataController myController = new DataController();
+             string responseUrl = myController.MakeRequest(domain + getParam);
+             IList<SearchResult> myList = myController.parseJson();
+            foreach (SearchResult searchResult in myList) {
+                    ArticleList.Add(new Article(searchResult.id, searchResult.url));
+            }
+            Debug.Print(ArticleList.Count.ToString());
 
 
         }
@@ -352,7 +352,7 @@ namespace KentHackathon
                 }
             }
             var Image = shirt;
-            drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
+          //  drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
             drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
         }
 

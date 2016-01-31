@@ -77,12 +77,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Article.cs" />
     <Compile Include="Catalog.xaml.cs">
       <DependentUpon>Catalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataController.cs" />
     <Compile Include="MirrorWindow.xaml.cs">
       <DependentUpon>MirrorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchResult.cs" />
     <Page Include="Catalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

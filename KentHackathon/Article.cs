@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace KentHackathon
 {
-    public class SearchResult
+    class Article
     {
-        public string id { get; set; }
-        public string url { get; set; }
-        public SearchResult(string id, string url)
+        String id { get; } 
+        String url { get; }
+
+        public Article(String id, String url)
         {
             this.id = id;
             this.url = url;
-
         }
+
 
 
     }
