@@ -317,7 +317,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
-            var Image = new BitmapImage(new Uri("Images/shirt.png"));
+            var Image = new BitmapImage(new Uri("shirt.jpg"));
             drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
             drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
         }
