@@ -25,6 +25,8 @@ namespace KentHackathon
     public partial class MirrorWindow : Window
     {
 
+        private System.Drawing.Bitmap shirt;
+
         private JToken token;
         private String[] images;
         private Catalog catalog = new Catalog();
@@ -122,7 +124,10 @@ namespace KentHackathon
             //request.Accept = "application/xrds+xml";  
             //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-           // WebHeaderCollection header = response.Headers;
+            // WebHeaderCollection header = response.Headers;
+
+            shirt = new System.Drawing.Bitmap(new System.IO.MemoryStream(new System.Net.WebClient().DownloadData("https://stoh.io/suit.jpg")));
+
 
 
         }
@@ -347,7 +352,7 @@ namespace KentHackathon
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
-            var Image = new BitmapImage(new Uri("shirt.jpg"));
+            var Image = shirt;
             drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
             drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
         }
