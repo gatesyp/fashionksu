@@ -1,33 +1,32 @@
 <?php
 ini_set('display_errors', "1");
 session_start();
-$_SESSION['token'] = 'AVG2Mj_yBaKr115rGb6jFYURQjD_FC6Ccslk5ItC1CGStIAq5wAAAAA';
 require 'dbConnect.php';
 require 'vendor/autoload.php';
 
 use DirkGroenen\Pinterest\Pinterest;
 
-$pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
-$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-if (isset($_GET["code"]) && empty($_SESSION['token'])) {
-    $token = $pinterest->auth->getOAuthToken($_GET["code"]);
-    $_SESSION['token'] = $token->access_token;
-}
-
-if (!empty($_SESSION['token'])) {
-    $pinterest->auth->setOAuthToken($_SESSION['token']);
-}
-
-if (empty($_SESSION['token'])) {
-    $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
-    echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
-
-    return;
-}
-$mainProfile = $pinterest->users->me()->id;
-//$mainProfile = '1075680275800091';
-
+//$pinterest = new Pinterest("4815503224578518879", "2b3b2d7158fd5d0cad85784bec3400a2e238049c89e760185cf9191be4d846ea");
+//$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//
+//if (isset($_GET["code"]) && empty($_SESSION['token'])) {
+//    $token = $pinterest->auth->getOAuthToken($_GET["code"]);
+//    $_SESSION['token'] = $token->access_token;
+//}
+//
+//if (!empty($_SESSION['token'])) {
+//    $pinterest->auth->setOAuthToken($_SESSION['token']);
+//}
+//
+//if (empty($_SESSION['token'])) {
+//    $loginurl = $pinterest->auth->getLoginUrl($url, ['read_public']);
+//    echo '<a href=' . $loginurl . '>Authorize Pinterest</a>';
+//
+//    return;
+//}
+//$mainProfile = $pinterest->users->me()->id;
+$mainProfile = '1075680275800091';
+//var_dump($pinterest->users->getMeBoards()->all());
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 if (isset($_GET['update']) && !empty($_GET['id']) && !empty($_GET['response'])) {
@@ -40,11 +39,13 @@ if (isset($_GET['update']) && !empty($_GET['id']) && !empty($_GET['response'])) 
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
-    $pinterest->pins->create(array(
-        "note"          => "Liked using Mirror Catalog",
-        "image_url"     => $row['url'],
-        "board"         => "46302771108057767"
-    ));
+//    $response = $pinterest->pins->create(array(
+//        "note"          => "Liked using Mirror Catalog",
+//        "image_url"     => $row['url'],
+//        "board"         => "46302771108057767"
+//    ));
+//
+//    var_dump($response->id);
 
     return;
 }
