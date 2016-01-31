@@ -11,9 +11,10 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     using System.Windows.Media;
     using Microsoft.Kinect;
     using System;
-    using System.Diagnostics;    /// <summary>
-                                 /// Interaction logic for MainWindow.xaml
-                                 /// </summary>
+    using System.Diagnostics;
+    using System.Windows.Media.Imaging;/// <summary>
+                                       /// Interaction logic for MainWindow.xaml
+                                       /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -316,7 +317,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
-
+            var Image = new BitmapImage(new Uri("Images/shirt.png"));
+            drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
             drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
         }
 
