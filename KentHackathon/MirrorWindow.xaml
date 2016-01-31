@@ -52,6 +52,8 @@
                 <Image Name="Image" Width="Auto" Height="Auto"/>
             </Viewbox>
             <k:KinectTileButton Grid.Row="0" Background="Transparent" Foreground="Transparent" Height="Auto" Width="Auto" Panel.ZIndex="10" Margin="0, 0, 0, 25" Click="Catalog_On_Click" FontSize="90" FontStyle="Italic" FontWeight="ExtraBold" Name="Cat_Btn">CATALOG</k:KinectTileButton>
+            <k:KinectTileButton Grid.Row="0" Background="LightGreen" Foreground="Black" Height="140" Width="140" Panel.ZIndex="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Like_On_Click" FontSize="60" FontStyle="Italic" FontWeight="ExtraBold" Name="Like_Btn">Like</k:KinectTileButton>
+            <k:KinectTileButton Grid.Row="0" Background="PaleVioletRed" Foreground="Black" Height="140" Width="140" Panel.ZIndex="40" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Dislike_On_Click" FontSize="36" FontStyle="Italic" FontWeight="ExtraBold" Name="Dislike_Btn">DisLike</k:KinectTileButton>
 
         </Grid>
     </k:KinectRegion>

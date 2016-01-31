@@ -28,6 +28,7 @@ namespace KentHackathon
     public partial class MirrorWindow : Window
     {
         private IList<Article> ArticleList = new List<Article>();
+        private Article currentArticle;
 
         private BitmapImage shirt;
         private Catalog catalog;
@@ -346,12 +347,12 @@ namespace KentHackathon
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
                         {
-                           /** dc.DrawEllipse(
-                          this.centerPointBrush,
-                            null,
-                            this.SkeletonPointToScreen(skel.Position),
-                            BodyCenterThickness,
-                            BodyCenterThickness); **/
+                            /** dc.DrawEllipse(
+                           this.centerPointBrush,
+                             null,
+                             this.SkeletonPointToScreen(skel.Position),
+                             BodyCenterThickness,
+                             BodyCenterThickness); **/
                         }
                     }
                 }
@@ -492,9 +493,9 @@ namespace KentHackathon
 
 
             boxTopLeft.X = -60 + (shoulderLeftDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
-            boxTopLeft.Y =  -25 + shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY;
+            boxTopLeft.Y = -25 + shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY;
 
-            boxTopRight.X = 60 +(shoulderRightDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
+            boxTopRight.X = 60 + (shoulderRightDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
             boxTopRight.Y = boxTopLeft.Y;
 
             boxBotLeft.X = boxTopLeft.X;
@@ -509,7 +510,7 @@ namespace KentHackathon
         private void Grid_Click(object sender, RoutedEventArgs e)
         {
             KinectTileButton tB = (KinectTileButton)e.OriginalSource;
-            if (tB.Name != "Cat_Btn")
+            if (tB.Name != "Cat_Btn" && tB.Name != "Like_Btn" && tB.Name != "Dislike_Btn")
             {
                 String id = tB.Name.Substring(3);
                 foreach (Article a in ArticleList)
@@ -517,9 +518,10 @@ namespace KentHackathon
                     if (a.id == id)
                     {
                         shirt = a.bitmapImage;
+                        currentArticle = a;
                     }
                 }
-                
+
                 layoutGrid.Children.Remove(catalog);
                 layoutGrid.Children.Add(Cat_Btn);
             }
@@ -538,5 +540,36 @@ namespace KentHackathon
             layoutGrid.Children.Remove(Cat_Btn);
 
         }
+
+        private void Like_On_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentArticle == null)
+            {
+                return;
+            }
+            string id = currentArticle.id;
+            string response = "1";
+            string param = "update&id=" + id + "&response=" + response;
+            HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?" + param) as HttpWebRequest;
+            request.GetResponse();
+            Debug.Print("https://stoh.io/recScript.php?" + param);
+
+        }
+
+        private void Dislike_On_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentArticle == null)
+            {
+                return;
+            }
+            string id = currentArticle.id;
+            string response = "0";
+            string param = "update&id=" + id + "&response=" + response;
+            HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?" + param) as HttpWebRequest;
+            request.GetResponse();
+            Debug.Print("https://stoh.io/recScript.php?" + param);
+
+        }
+
     }
 }
