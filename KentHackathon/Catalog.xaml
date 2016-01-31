@@ -6,20 +6,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KentHackathon"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1211" d:DesignWidth="638">
     <Grid>
-        <k:KinectScrollViewer Name="scroolViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
-            <WrapPanel VerticalAlignment="Center" x:Name="wrapPanel" Orientation="Vertical">
-                <k:KinectTileButton Label="1"/>
-                <k:KinectTileButton Label="2"/>
-                <k:KinectTileButton Label="3"/>
-                <k:KinectTileButton Label="4"/>
-                <k:KinectTileButton Label="5"/>
-                <k:KinectTileButton Label="6"/>
-                <k:KinectTileButton Label="7"/>
-                <k:KinectTileButton Label="8"/>
-                <k:KinectTileButton Label="9"/>
-                <k:KinectTileButton Label="10"/>
+        <k:KinectScrollViewer Name="scroolViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <WrapPanel HorizontalAlignment="Center" x:Name="wrapPanel" Orientation="Horizontal">
+                <k:KinectTileButton Margin="10" Label="1"/>
+                <k:KinectTileButton Margin="10" Label="2"/>
+                <k:KinectTileButton Margin="10" Label="3"/>
+                <k:KinectTileButton Margin="10" Label="4"/>
+                <k:KinectTileButton Margin="10" Label="5"/>
+                <k:KinectTileButton Margin="10" Label="6"/>
+                <k:KinectTileButton Margin="10" Label="7"/>
+                <k:KinectTileButton Margin="10" Label="8"/>
+                <k:KinectTileButton Margin="10" Label="9"/>
+                <k:KinectTileButton Margin="10" Label="10"/>
             </WrapPanel>
         </k:KinectScrollViewer>
     </Grid>

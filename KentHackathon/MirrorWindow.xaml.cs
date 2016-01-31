@@ -16,14 +16,17 @@ namespace KentHackathon
     using System.Net;
     using Newtonsoft.Json.Linq;
     using System.Text;
-    using Newtonsoft.Json;/// <summary>
-                          /// Interaction logic for MainWindow.xaml
-                          /// </summary>
+    using Newtonsoft.Json;
+    using System.Windows.Controls;
+    using Microsoft.Kinect.Toolkit.Controls;/// <summary>
+                                            /// Interaction logic for MainWindow.xaml
+                                            /// </summary>
     public partial class MirrorWindow : Window
     {
 
         private JToken token;
         private String[] images;
+        private Catalog catalog = new Catalog();
 
         private Point boxTopRight = new Point();
         private Point boxTopLeft = new Point();
@@ -116,9 +119,9 @@ namespace KentHackathon
             HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?get_suggests") as HttpWebRequest;
 
             //request.Accept = "application/xrds+xml";  
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            WebHeaderCollection header = response.Headers;
+           // WebHeaderCollection header = response.Headers;
 
 
         }
@@ -430,6 +433,34 @@ namespace KentHackathon
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
+
+        }
+
+
+        private void Grid_Click(object sender,RoutedEventArgs e)
+        {
+            //Debug.Print(e.OriginalSource.ToString());
+            KinectTileButton tB = (KinectTileButton)e.OriginalSource;
+            if (tB.Name != "Cat_Btn")
+            {
+                //Debug.Print("if statement is true");
+                layoutGrid.Children.Remove(catalog);
+            }
+            
+        }
+
+        private void Get_Url_Image()
+        {
+            
+        }
+
+        private void Catalog_On_Click(object sender, RoutedEventArgs e)
+        {
+            
+            layoutGrid.Children.Add(catalog);
+            Grid.SetRowSpan(catalog, 2);
+            
+            
 
         }
     }
