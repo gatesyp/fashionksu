@@ -20,8 +20,8 @@ namespace KentHackathon
     using System.Windows.Controls;
     using Microsoft.Kinect.Toolkit.Controls;
     using System.Collections.Generic;/// <summary>
-                         /// Interaction logic for MainWindow.xaml
-                         /// </summary>
+                                     /// Interaction logic for MainWindow.xaml
+                                     /// </summary>
     public partial class MirrorWindow : Window
     {
         private IList<Article> ArticleList = new List<Article>();
@@ -118,13 +118,14 @@ namespace KentHackathon
 
             InitializeComponent();
             string domain = "https://stoh.io/recScript.php?";
-             string getParam = "get_suggests"; 
+            string getParam = "get_suggests";
             // can only be get_suggests or recalculate
-             DataController myController = new DataController();
-             string responseUrl = myController.MakeRequest(domain + getParam);
-             IList<SearchResult> myList = myController.parseJson();
-            foreach (SearchResult searchResult in myList) {
-                    ArticleList.Add(new Article(searchResult.id, searchResult.url));
+            DataController myController = new DataController();
+            string responseUrl = myController.MakeRequest(domain + getParam);
+            IList<SearchResult> myList = myController.parseJson();
+            foreach (SearchResult searchResult in myList)
+            {
+                ArticleList.Add(new Article(searchResult.id, searchResult.url));
             }
             Debug.Print(ArticleList.Count.ToString());
 
@@ -275,7 +276,7 @@ namespace KentHackathon
                         setBoundingBox(skel);
 
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
-                        { 
+                        {
                             this.DrawBonesAndJoints(skel, dc);
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
@@ -352,8 +353,8 @@ namespace KentHackathon
                 }
             }
             var Image = shirt;
-          //  drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
-            drawingContext.DrawRectangle(null,this.trackedBonePen , new Rect(boxTopLeft, boxBotRight));
+            //  drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
+            drawingContext.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
         }
 
         /// <summary>
@@ -367,7 +368,7 @@ namespace KentHackathon
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skelpoint, DepthImageFormat.Resolution640x480Fps30);
             double x = (depthPoint.X * ScaleX + OffsetX) * ScaleX2;
-            double y = depthPoint.Y * ScaleY * (Math.Pow((depthScale/depthPoint.Depth), .000000000000000001)) + OffsetY;
+            double y = depthPoint.Y * ScaleY * (Math.Pow((depthScale / depthPoint.Depth), .000000000000000001)) + OffsetY;
             return new Point(x, y);
         }
 
@@ -434,7 +435,7 @@ namespace KentHackathon
             boxTopRight.Y = boxTopLeft.Y;
 
             boxBotLeft.X = boxTopLeft.X;
-            boxBotLeft.Y = ((HipLeftDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipLeftDepthPoint.Depth), .000000000000000001)) + OffsetY) + (HipRightDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipRightDepthPoint.Depth), .000000000000000001)) + OffsetY)) /2;
+            boxBotLeft.Y = ((HipLeftDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipLeftDepthPoint.Depth), .000000000000000001)) + OffsetY) + (HipRightDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipRightDepthPoint.Depth), .000000000000000001)) + OffsetY)) / 2;
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
@@ -442,7 +443,7 @@ namespace KentHackathon
         }
 
 
-        private void Grid_Click(object sender,RoutedEventArgs e)
+        private void Grid_Click(object sender, RoutedEventArgs e)
         {
             //Debug.Print(e.OriginalSource.ToString());
             KinectTileButton tB = (KinectTileButton)e.OriginalSource;
@@ -451,21 +452,21 @@ namespace KentHackathon
                 //Debug.Print("if statement is true");
                 layoutGrid.Children.Remove(catalog);
             }
-            
+
         }
 
         private void Get_Url_Image()
         {
-            
+
         }
 
         private void Catalog_On_Click(object sender, RoutedEventArgs e)
         {
-            
+
             layoutGrid.Children.Add(catalog);
             Grid.SetRowSpan(catalog, 2);
-            
-            
+
+
 
         }
     }
