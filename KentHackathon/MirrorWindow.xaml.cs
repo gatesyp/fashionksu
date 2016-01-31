@@ -19,7 +19,7 @@ namespace KentHackathon
     using Newtonsoft.Json;/// <summary>
                           /// Interaction logic for MainWindow.xaml
                           /// </summary>
-    public  class MirrorWindow : Window
+    public partial class MirrorWindow : Window
     {
 
         private JToken token;
@@ -183,7 +183,7 @@ namespace KentHackathon
             this.imageSource = new DrawingImage(this.drawingGroup);
 
             // Display the drawing using our image control
-            Image.Source = this.imageSource;
+            //Image.Source = this.imageSource;
 
             // Look through all sensors and start the first connected one.
             // This requires that a Kinect is connected at the time of app startup.
