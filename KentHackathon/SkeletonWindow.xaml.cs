@@ -400,12 +400,10 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             boxTopRight.Y = boxTopLeft.Y;
 
             boxBotLeft.X = boxTopLeft.X;
-            boxBotLeft.Y = ((shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY) + (shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY)) /2;
+            boxBotLeft.Y = ((HipLeftDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipLeftDepthPoint.Depth), .000000000000000001)) + OffsetY) + (HipRightDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipRightDepthPoint.Depth), .000000000000000001)) + OffsetY)) /2;
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
-
-            boxTopRight.X = boxTopRight.X;
 
         }
     }
