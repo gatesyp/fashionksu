@@ -12,16 +12,25 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     using Microsoft.Kinect;
     using System;
     using System.Diagnostics;
-    using System.Windows.Media.Imaging;/// <summary>
-                                       /// Interaction logic for MainWindow.xaml
-                                       /// </summary>
+    using System.Windows.Media.Imaging;
+    using System.Net;
+    using Newtonsoft.Json.Linq;
+    using System.Text;
+    using Newtonsoft.Json;/// <summary>
+                          /// Interaction logic for MainWindow.xaml
+                          /// </summary>
     public partial class MainWindow : Window
     {
+
+        private JToken token;
+        private String[] images;
 
         private Point boxTopRight = new Point();
         private Point boxTopLeft = new Point();
         private Point boxBotRight = new Point();
         private Point boxBotLeft = new Point();
+
+
 
         private const double ScaleX = 2.846;
         private const double OffsetX = -596.592;
@@ -98,9 +107,42 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
         /// </summary>
+        /// 
+
+            public class ImageData
+        {
+            public string url;
+            public int id;
+        }
         public MainWindow()
         {
             InitializeComponent();
+            HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?get_suggests") as HttpWebRequest;
+
+            //request.Accept = "application/xrds+xml";  
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            WebHeaderCollection header = response.Headers;
+
+            var encoding = ASCIIEncoding.ASCII;
+            using (var reader = new System.IO.StreamReader(response.GetResponseStream(), encoding))
+            {
+                string responseText = reader.ReadToEnd();
+                Debug.Print(responseText);
+                ImageData tmp2 = JsonConvert.DeserializeObject<ImageData>(responseText);
+                foreach (string typeStr in tmp2)
+                {
+                    // Do something with typeStr
+                }
+
+            }
+
+        }
+
+        private void ParseJSON(WebResponse response)
+        {
+            //token = JObject.Parse(response.ToString());
+            Debug.Print(response.ToString());
         }
 
         /// <summary>
