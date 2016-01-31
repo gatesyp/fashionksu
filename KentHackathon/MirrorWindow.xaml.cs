@@ -18,9 +18,10 @@ namespace KentHackathon
     using System.Text;
     using Newtonsoft.Json;
     using System.Windows.Controls;
-    using Microsoft.Kinect.Toolkit.Controls;/// <summary>
-                                            /// Interaction logic for MainWindow.xaml
-                                            /// </summary>
+    using Microsoft.Kinect.Toolkit.Controls;
+    using System.Windows.Media.Animation;/// <summary>
+                                         /// Interaction logic for MainWindow.xaml
+                                         /// </summary>
     public partial class MirrorWindow : Window
     {
 
@@ -443,22 +444,32 @@ namespace KentHackathon
             KinectTileButton tB = (KinectTileButton)e.OriginalSource;
             if (tB.Name != "Cat_Btn")
             {
-                //Debug.Print("if statement is true");
-                layoutGrid.Children.Remove(catalog);
-            }
-            
-        }
+                DoubleAnimation da = new DoubleAnimation();
+                da.From = 0.1;
+                da.To = 1;
+                da.Duration = new Duration(TimeSpan.FromSeconds(1));
 
-        private void Get_Url_Image()
-        {
+                layoutGrid.Children.Remove(catalog);
+
+                Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
+                viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
+
+            }
             
         }
 
         private void Catalog_On_Click(object sender, RoutedEventArgs e)
         {
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 1;
+            da.To = 0.1;
+            da.Duration = new Duration(TimeSpan.FromSeconds(1));
             
             layoutGrid.Children.Add(catalog);
             Grid.SetRowSpan(catalog, 2);
+
+            Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
+            viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
             
             
 
