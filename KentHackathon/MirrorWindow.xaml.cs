@@ -20,9 +20,10 @@ namespace KentHackathon
     using System.Windows.Controls;
     using Microsoft.Kinect.Toolkit.Controls;
     using System.Collections.Generic;
-    using Microsoft.Kinect.Toolkit;/// <summary>
-                                   /// Interaction logic for MainWindow.xaml
-                                   /// </summary>
+    using Microsoft.Kinect.Toolkit;
+    using System.Windows.Data;/// <summary>
+                              /// Interaction logic for MainWindow.xaml
+                              /// </summary>
     public partial class MirrorWindow : Window
     {
         private IList<Article> ArticleList = new List<Article>();
@@ -119,10 +120,15 @@ namespace KentHackathon
         public MirrorWindow()
         {
 
-            InitializeComponent();
+            this.InitializeComponent();
             this.sensorChooser = new KinectSensorChooser();
             this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
             this.sensorChooser.Start();
+
+
+            var regionSensorBinding = new Binding("Kinect") { Source = this.sensorChooser };
+            BindingOperations.SetBinding(this.kinectRegion, KinectRegion.KinectSensorProperty, regionSensorBinding);
+
             
             string domain = "https://stoh.io/recScript.php?";
             string getParam = "get_suggests";
@@ -407,9 +413,7 @@ namespace KentHackathon
                 }
             }
             if (shirt != null) {
-               // ImageSourceConverter c = new ImageSourceConverter();
-              //  ImageSource image = (ImageSource)c.ConvertFrom(shirt);
-             //   drawingContext.DrawImage(image, new Rect(boxTopLeft, boxBotRight));
+                drawingContext.DrawImage((ImageSource) shirt, new Rect(boxTopLeft, boxBotRight));
             }
             drawingContext.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
         }
