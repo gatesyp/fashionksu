@@ -39,6 +39,7 @@ namespace KentHackathon
 
 
 
+
         private const double ScaleX = 2.846;
         private const double OffsetX = -596.592;
         private const double ScaleX2 = 1.2;
@@ -129,22 +130,6 @@ namespace KentHackathon
 
             var regionSensorBinding = new Binding("Kinect") { Source = this.sensorChooser };
             BindingOperations.SetBinding(this.kinectRegion, KinectRegion.KinectSensorProperty, regionSensorBinding);
-
-            
-            string domain = "https://stoh.io/recScript.php?";
-            string getParam = "get_suggests";
-            // can only be get_suggests or recalculate
-            DataController myController = new DataController();
-            string responseUrl = myController.MakeRequest(domain + getParam);
-            IList<SearchResult> myList = myController.parseJson();
-            foreach (SearchResult searchResult in myList)
-            {
-                ArticleList.Add(new Article(searchResult.id, searchResult.url));
-            }
-            Debug.Print(ArticleList.Count.ToString());
-
-            catalog = new Catalog(ArticleList);
-
 
         }
 
@@ -246,6 +231,20 @@ namespace KentHackathon
         /// <param name="e">event arguments</param>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
+            string domain = "https://stoh.io/recScript.php?";
+            string getParam = "get_suggests";
+            // can only be get_suggests or recalculate
+            DataController myController = new DataController();
+            string responseUrl = myController.MakeRequest(domain + getParam);
+            IList<SearchResult> myList = myController.parseJson();
+            foreach (SearchResult searchResult in myList)
+            {
+                ArticleList.Add(new Article(searchResult.id, searchResult.url));
+            }
+            Debug.Print(ArticleList.Count.ToString());
+
+            catalog = new Catalog(ArticleList);
+
             // Create the drawing group we'll use for drawing
             this.drawingGroup = new DrawingGroup();
 
@@ -339,15 +338,20 @@ namespace KentHackathon
                         if (skel.TrackingState == SkeletonTrackingState.Tracked)
                         {
                             this.DrawBonesAndJoints(skel, dc);
+                            if (shirt != null)
+                            {
+                                dc.DrawImage((ImageSource)shirt, new Rect(boxTopLeft, boxBotRight));
+                            }
+                            // dc.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
                         }
                         else if (skel.TrackingState == SkeletonTrackingState.PositionOnly)
                         {
-                            dc.DrawEllipse(
-                            this.centerPointBrush,
+                           /** dc.DrawEllipse(
+                          this.centerPointBrush,
                             null,
                             this.SkeletonPointToScreen(skel.Position),
                             BodyCenterThickness,
-                            BodyCenterThickness);
+                            BodyCenterThickness); **/
                         }
                     }
                 }
@@ -413,10 +417,7 @@ namespace KentHackathon
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
-            if (shirt != null) {
-                drawingContext.DrawImage((ImageSource) shirt, new Rect(boxTopLeft, boxBotRight));
-            }
-            drawingContext.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
+
         }
 
         /// <summary>
@@ -490,14 +491,14 @@ namespace KentHackathon
             DepthImagePoint HipRightDepthPoint = this.sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(skeleton.Joints[JointType.HipRight].Position, DepthImageFormat.Resolution640x480Fps30);
 
 
-            boxTopLeft.X = (shoulderLeftDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
-            boxTopLeft.Y = shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY;
+            boxTopLeft.X = -60 + (shoulderLeftDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
+            boxTopLeft.Y =  -25 + shoulderCenterDepthPoint.Y * ScaleY * (Math.Pow((depthScale / shoulderCenterDepthPoint.Depth), .000000000000000001)) + OffsetY;
 
-            boxTopRight.X = (shoulderRightDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
+            boxTopRight.X = 60 +(shoulderRightDepthPoint.X * ScaleX + OffsetX) * ScaleX2;
             boxTopRight.Y = boxTopLeft.Y;
 
             boxBotLeft.X = boxTopLeft.X;
-            boxBotLeft.Y = ((HipLeftDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipLeftDepthPoint.Depth), .000000000000000001)) + OffsetY) + (HipRightDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipRightDepthPoint.Depth), .000000000000000001)) + OffsetY)) / 2;
+            boxBotLeft.Y = 40 + ((HipLeftDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipLeftDepthPoint.Depth), .000000000000000001)) + OffsetY) + (HipRightDepthPoint.Y * ScaleY * (Math.Pow((depthScale / HipRightDepthPoint.Depth), .000000000000000001)) + OffsetY)) / 2;
 
             boxBotRight.X = boxTopRight.X;
             boxBotRight.Y = boxBotLeft.Y;
@@ -518,23 +519,9 @@ namespace KentHackathon
                         shirt = a.bitmapImage;
                     }
                 }
-
-                DoubleAnimation da = new DoubleAnimation();
-                da.From = 0.2;
-                da.To = 1;
-                da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
-
-                DoubleAnimation db = new DoubleAnimation();
-                db.From = 1;
-                db.To = 0;
-                db.Duration = new Duration(TimeSpan.FromSeconds(0.5));
-
-                catalog.BeginAnimation(Catalog.OpacityProperty, db);
-                db.ApplyAnimationClock(Catalog.OpacityProperty, db.CreateClock());
-                Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
-                viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
                 
                 layoutGrid.Children.Remove(catalog);
+                layoutGrid.Children.Add(Cat_Btn);
             }
 
         }
@@ -546,28 +533,9 @@ namespace KentHackathon
 
         private void Catalog_On_Click(object sender, RoutedEventArgs e)
         {
-            DoubleAnimation da = new DoubleAnimation();
-            da.From = 0.6;
-            da.To = 0.2;
-            da.Duration = new Duration(TimeSpan.FromSeconds(0.4));
 
-            DoubleAnimation db = new DoubleAnimation();
-            db.From = 0;
-            db.To = 1;
-            da.Duration = new Duration(TimeSpan.FromSeconds(0.5));
-
-            catalog.Opacity = 0;
             layoutGrid.Children.Add(catalog);
-
-            catalog.BeginAnimation(Catalog.OpacityProperty, db);
-            Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
-            viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
-
-            
-           
-            Grid.SetRowSpan(catalog, 2);
-
-
+            layoutGrid.Children.Remove(Cat_Btn);
 
         }
     }

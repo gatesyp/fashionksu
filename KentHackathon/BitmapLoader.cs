@@ -22,6 +22,12 @@ namespace KentHackathon
 
         public Bitmap loadImageToBitmap()
         {
+            Bitmap bitmap = (Bitmap)Image.FromFile(URL);
+            return bitmap;
+        }
+
+        public Bitmap loadImageToBitmapWeb()
+        {
             System.Net.WebRequest request =
        System.Net.WebRequest.Create(URL);
             System.Net.WebResponse response = request.GetResponse();
@@ -39,11 +45,7 @@ namespace KentHackathon
         }
         public BitmapImage loadImageToBitmapImage()
         {
-            System.Net.WebRequest request =
-System.Net.WebRequest.Create(URL);
-            System.Net.WebResponse response = request.GetResponse();
-            System.IO.Stream responseStream = response.GetResponseStream();
-            Bitmap bitmap = new Bitmap(responseStream);
+            Bitmap bitmap = (Bitmap)Image.FromFile(URL);
 
 
             using (var memory = new MemoryStream())

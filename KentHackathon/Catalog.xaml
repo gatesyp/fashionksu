@@ -6,8 +6,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KentHackathon"
              mc:Ignorable="d" 
-             d:DesignHeight="1211" d:DesignWidth="638">
-    <Grid>
+             d:DesignHeight="1211" d:DesignWidth="638"
+             Panel.ZIndex="30">
+    <Grid Panel.ZIndex="30">
         <k:KinectScrollViewer Name="scroolViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
             <WrapPanel HorizontalAlignment="Center" x:Name="wrapPanel" Orientation="Horizontal">
                 <k:KinectTileButton Margin="10" Label="1"/>
