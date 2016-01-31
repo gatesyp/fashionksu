@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Microsoft.Kinect.Toolkit.Controls;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +25,27 @@ namespace KentHackathon
     /// </summary>
     public partial class Catalog : UserControl
     {
-        public Catalog()
+        private IList<Article> ArticleList;
+
+        public Catalog(IList<Article> ArticleArray)
         {
             InitializeComponent();
+            ArticleList = ArticleArray;
+            wrapPanel.Children.Clear();
+
+            foreach(Article a in ArticleList)
+            {
+                KinectTileButton but = new KinectTileButton();
+                but.Name = "Ktb" + a.id;
+                but.Background = new ImageBrush(a.bitmapImage);
+                wrapPanel.Children.Add(but);
+
+            }
+
         }
+
+
+
+        
     }
 }

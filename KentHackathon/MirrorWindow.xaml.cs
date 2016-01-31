@@ -26,8 +26,8 @@ namespace KentHackathon
     {
         private IList<Article> ArticleList = new List<Article>();
 
-        private System.Drawing.Bitmap shirt;
-        private Catalog catalog = new Catalog();
+        private BitmapImage shirt;
+        private Catalog catalog;
 
         private Point boxTopRight = new Point();
         private Point boxTopLeft = new Point();
@@ -128,6 +128,8 @@ namespace KentHackathon
                 ArticleList.Add(new Article(searchResult.id, searchResult.url));
             }
             Debug.Print(ArticleList.Count.ToString());
+
+            catalog = new Catalog(ArticleList);
 
 
         }
@@ -352,8 +354,11 @@ namespace KentHackathon
                     drawingContext.DrawEllipse(drawBrush, null, this.SkeletonPointToScreen(joint.Position), JointThickness, JointThickness);
                 }
             }
-            var Image = shirt;
-            //  drawingContext.DrawImage(Image, new Rect(boxTopLeft, boxBotRight));
+            if (shirt != null) {
+                ImageSourceConverter c = new ImageSourceConverter();
+                ImageSource image = (ImageSource)c.ConvertFrom(shirt);
+                drawingContext.DrawImage(image, new Rect(boxTopLeft, boxBotRight));
+            }
             drawingContext.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
         }
 
@@ -445,11 +450,19 @@ namespace KentHackathon
 
         private void Grid_Click(object sender, RoutedEventArgs e)
         {
-            //Debug.Print(e.OriginalSource.ToString());
             KinectTileButton tB = (KinectTileButton)e.OriginalSource;
             if (tB.Name != "Cat_Btn")
             {
-                //Debug.Print("if statement is true");
+                String id = tB.Name.Substring(3);
+                foreach (Article a in ArticleList)
+                {
+                    if (a.id == id)
+                    {
+                        shirt = a.bitmapImage;
+                    }
+                }
+
+
                 layoutGrid.Children.Remove(catalog);
             }
 
