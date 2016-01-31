@@ -194,7 +194,7 @@ namespace KentHackathon
             this.imageSource = new DrawingImage(this.drawingGroup);
 
             // Display the drawing using our image control
-            //Image.Source = this.imageSource;
+            Image.Source = this.imageSource;
 
             // Look through all sensors and start the first connected one.
             // This requires that a Kinect is connected at the time of app startup.
@@ -355,9 +355,9 @@ namespace KentHackathon
                 }
             }
             if (shirt != null) {
-                ImageSourceConverter c = new ImageSourceConverter();
-                ImageSource image = (ImageSource)c.ConvertFrom(shirt);
-                drawingContext.DrawImage(image, new Rect(boxTopLeft, boxBotRight));
+               // ImageSourceConverter c = new ImageSourceConverter();
+              //  ImageSource image = (ImageSource)c.ConvertFrom(shirt);
+             //   drawingContext.DrawImage(image, new Rect(boxTopLeft, boxBotRight));
             }
             drawingContext.DrawRectangle(null, this.trackedBonePen, new Rect(boxTopLeft, boxBotRight));
         }
