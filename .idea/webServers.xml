@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6ea01647-e96d-465f-b14f-a69d4cc76b7d" name="stohio" url="http://stoh.io">
+        <fileTransfer host="stoh.io" port="21" accessType="FTPS" password="dfe8df8edfd8dfc4dfd8df9edfc3dfd9dfd8df8b" username="ftp">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" forceListCommand="true" passiveMode="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ce7d8ed-c2db-4a6d-bc1b-41d7cdb58031" name="Default" comment="undo steve shitto">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.vs/KentHackathon/v14/.suo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.pdb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.vshost.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.Toolkit.BackgroundRemoval.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.Toolkit.Controls.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.Toolkit.Fusion.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.Toolkit.Interaction.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.Toolkit.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.Properties.Resources.resources" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.csproj.GenerateResource.Cache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.csprojResolveAssemblyReference.cache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.g.resources" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.pdb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/MainWindow.baml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/SkeletonWindow.baml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/AppView.baml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MainView.baml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MirrorView.baml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/testimage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/fashionksu.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.exe.config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.vshost.exe.config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/KentHackathon.vshost.exe.manifest" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/bin/Debug/Microsoft.Kinect.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/App.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/App.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/GeneratedInternalTypeHelper.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon.csproj.FileListAbsolute.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon_MarkupCompile.cache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon_MarkupCompile.i.cache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon_MarkupCompile.i.lref" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/KentHackathon_MarkupCompile.lref" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/MainWindow.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/MainWindow.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/SkeletonWindow.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/SkeletonWindow.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/AppView.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/AppView.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MainView.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MainView.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MirrorView.g.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/KentHackathon/obj/Debug/Views/MirrorView.g.i.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/autoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/ClassLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/autoload_classmap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/autoload_namespaces.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/autoload_psr4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/autoload_real.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/composer/installed.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/.codeclimate.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/phpunit.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Auth/PinterestOAuth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Boards.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Endpoint.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Following.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Pins.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Users.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Exceptions/InvalidEndpointException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Exceptions/InvalidModelException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Exceptions/PinterestException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Board.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Collection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Interest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Pin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/User.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Pinterest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Transport/Request.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Transport/Response.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Utils/CurlBuilder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/AuthTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/BoardsTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/FollowingTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/ImageUploadTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/PinsTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Endpoints/UsersTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Models/CollectionTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Models/ModelTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/PinterestTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/Utils/CurlBuilderMock.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/bootstrap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/env.sample" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/BoardsTest/testCreate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/BoardsTest/testDelete.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/BoardsTest/testGet.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/BoardsTest/testGetWithExtraFields.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/CollectionTest/interestsPageOne.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testBoards.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testFollowBoard.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testFollowUser.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testIfPaginationIsWorking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testInterests.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testUnfollowBoard.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testUnfollowUser.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/FollowingTest/testUsers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/ModelTest/pin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/PinsTest/testCreate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/PinsTest/testDelete.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/PinsTest/testFromBoard.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/PinsTest/testGet.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testFindInValidUserAndThrowException.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testFindValidUser.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testGetMeBoards.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testGetMeFollowers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testGetMeLikes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testGetMePins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testGetMePinsWithExtraFields.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testMe.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testSearchMeBoards.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/UsersTest/testSearchMePins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/tests/Pinterest/responses/testGetMePinsWithExtraFields.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/dbConnect.php" afterPath="$PROJECT_DIR$/scripts/dbConnect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/recScript.php" afterPath="$PROJECT_DIR$/scripts/recScript.php" />
+    </list>
+    <ignored path="fashionksu.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="fashionksu" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="recScript.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/recScript.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35201794">
+              <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+              <folding>
+                <marker date="1454212885025" expanded="true" signature="1075:1239" placeholder="INSERT INTO profile_data... " />
+                <marker date="1454212885025" expanded="true" signature="1240:1297" placeholder="UPDATE respo... " />
+                <marker date="1454212885025" expanded="true" signature="1561:1602" placeholder="SELECT DISTI... profile_data" />
+                <marker date="1454212885025" expanded="true" signature="1745:2062" placeholder="SELECT FIRST... profile_data" />
+                <marker date="1454212885025" expanded="true" signature="2296:2617" placeholder="SELECT COUNT... profile_data" />
+                <marker date="1454212885025" expanded="true" signature="2823:2927" placeholder="SELECT COUNT... profile_data" />
+                <marker date="1454212885025" expanded="true" signature="3365:3491" placeholder="INSERT INTO similarity_index... " />
+                <marker date="1454212885025" expanded="true" signature="3492:3522" placeholder="UPDATE ratin... " />
+                <marker date="1454212885025" expanded="true" signature="3898:4263" placeholder="SELECT first... profile_data" />
+                <marker date="1454212885025" expanded="true" signature="4428:4465" placeholder="SELECT url, pictures" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pinterest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Pinterest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PinterestOAuth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Auth/PinterestOAuth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="153" column="50" selection-start-line="153" selection-start-column="50" selection-end-line="153" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbConnect.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/dbConnect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="kinect1" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/dbConnect.php" />
+        <option value="$PROJECT_DIR$/scripts/recScript.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fashionksu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fashionksu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fashionksu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fashionksu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fashionksu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ce7d8ed-c2db-4a6d-bc1b-41d7cdb58031" name="Default" comment="" />
+      <created>1454171578982</created>
+      <option name="number" value="Default" />
+      <updated>1454171578982</updated>
+    </task>
+    <task id="LOCAL-00001" summary="reefofmrat">
+      <created>1454179839191</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1454179839191</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cleanup use $pfoesils">
+      <created>1454182034298</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1454182034298</updated>
+    </task>
+    <task id="LOCAL-00003" summary="use functions">
+      <created>1454185059329</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1454185059329</updated>
+    </task>
+    <task id="LOCAL-00004" summary="pinterest auth">
+      <created>1454187009566</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1454187009566</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cleaning">
+      <created>1454189231919</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1454189231919</updated>
+    </task>
+    <task id="LOCAL-00006" summary="using pinterest with ID">
+      <created>1454190124485</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1454190124485</updated>
+    </task>
+    <task id="LOCAL-00007" summary="hard code profile id dont using pinterest">
+      <created>1454192252352</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1454192252352</updated>
+    </task>
+    <task id="LOCAL-00008" summary="using pinterest">
+      <created>1454192799524</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1454192799524</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add composer">
+      <created>1454193202839</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1454193202839</updated>
+    </task>
+    <task id="LOCAL-00010" summary="foreign key">
+      <created>1454193506894</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1454193506894</updated>
+    </task>
+    <task id="LOCAL-00011" summary="do an update">
+      <created>1454196916016</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1454196916016</updated>
+    </task>
+    <task id="LOCAL-00012" summary="on update duplicates">
+      <created>1454197013662</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1454197013662</updated>
+    </task>
+    <task id="LOCAL-00013" summary="gitignore">
+      <created>1454212857405</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1454212857405</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="reefofmrat" />
+    <MESSAGE value="cleanup use $pfoesils" />
+    <MESSAGE value="use functions" />
+    <MESSAGE value="pinterest auth" />
+    <MESSAGE value="cleaning" />
+    <MESSAGE value="using pinterest with ID" />
+    <MESSAGE value="hard code profile id dont using pinterest" />
+    <MESSAGE value="using pinterest" />
+    <MESSAGE value="add composer" />
+    <MESSAGE value="foreign key" />
+    <MESSAGE value="do an update" />
+    <MESSAGE value="on update duplicates" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/recScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+          <folding>
+            <marker date="1454212885025" expanded="true" signature="1075:1239" placeholder="INSERT INTO profile_data... " />
+            <marker date="1454212885025" expanded="true" signature="1240:1297" placeholder="UPDATE respo... " />
+            <marker date="1454212885025" expanded="true" signature="1561:1602" placeholder="SELECT DISTI... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="1745:2062" placeholder="SELECT FIRST... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="2296:2617" placeholder="SELECT COUNT... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="2823:2927" placeholder="SELECT COUNT... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="3365:3491" placeholder="INSERT INTO similarity_index... " />
+            <marker date="1454212885025" expanded="true" signature="3492:3522" placeholder="UPDATE ratin... " />
+            <marker date="1454212885025" expanded="true" signature="3898:4263" placeholder="SELECT first... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="4428:4465" placeholder="SELECT url, pictures" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Pinterest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Auth/PinterestOAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="153" column="50" selection-start-line="153" selection-start-column="50" selection-end-line="153" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/dbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/dbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Auth/PinterestOAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="153" column="50" selection-start-line="153" selection-start-column="50" selection-end-line="153" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Pinterest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/recScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35201794">
+          <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+          <folding>
+            <marker date="1454212885025" expanded="true" signature="1075:1239" placeholder="INSERT INTO profile_data... " />
+            <marker date="1454212885025" expanded="true" signature="1240:1297" placeholder="UPDATE respo... " />
+            <marker date="1454212885025" expanded="true" signature="1561:1602" placeholder="SELECT DISTI... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="1745:2062" placeholder="SELECT FIRST... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="2296:2617" placeholder="SELECT COUNT... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="2823:2927" placeholder="SELECT COUNT... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="3365:3491" placeholder="INSERT INTO similarity_index... " />
+            <marker date="1454212885025" expanded="true" signature="3492:3522" placeholder="UPDATE ratin... " />
+            <marker date="1454212885025" expanded="true" signature="3898:4263" placeholder="SELECT first... profile_data" />
+            <marker date="1454212885025" expanded="true" signature="4428:4465" placeholder="SELECT url, pictures" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
