@@ -439,13 +439,18 @@ namespace KentHackathon
 
         private void Grid_Click(object sender,RoutedEventArgs e)
         {
-            Debug.Print(e.OriginalSource.ToString());
+            //Debug.Print(e.OriginalSource.ToString());
             KinectTileButton tB = (KinectTileButton)e.OriginalSource;
             if (tB.Name != "Cat_Btn")
             {
-                Debug.Print("if statement is true");
+                //Debug.Print("if statement is true");
                 layoutGrid.Children.Remove(catalog);
             }
+            
+        }
+
+        private void Get_Url_Image()
+        {
             
         }
 
