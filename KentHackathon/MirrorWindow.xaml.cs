@@ -4,7 +4,7 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
-namespace Microsoft.Samples.Kinect.SkeletonBasics
+namespace KentHackathon
 {
     using System.IO;
     using System.Windows;
@@ -19,7 +19,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     using Newtonsoft.Json;/// <summary>
                           /// Interaction logic for MainWindow.xaml
                           /// </summary>
-    public partial class MainWindow : Window
+    public  class MirrorWindow : Window
     {
 
         private JToken token;
@@ -109,13 +109,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         /// </summary>
         /// 
 
-            public class ImageData
+        public MirrorWindow()
         {
-            public string url;
-            public int id;
-        }
-        public MainWindow()
-        {
+
             InitializeComponent();
             HttpWebRequest request = WebRequest.Create("https://stoh.io/recScript.php?get_suggests") as HttpWebRequest;
 
@@ -124,18 +120,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
             WebHeaderCollection header = response.Headers;
 
-            var encoding = ASCIIEncoding.ASCII;
-            using (var reader = new System.IO.StreamReader(response.GetResponseStream(), encoding))
-            {
-                string responseText = reader.ReadToEnd();
-                Debug.Print(responseText);
-                ImageData tmp2 = JsonConvert.DeserializeObject<ImageData>(responseText);
-                foreach (string typeStr in tmp2)
-                {
-                    // Do something with typeStr
-                }
-
-            }
 
         }
 
