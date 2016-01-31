@@ -40,7 +40,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <k:KinectRegion>
+    <k:KinectRegion Name="kinectRegion">
         <Grid Name="layoutGrid" Margin="65, 85, 65, 70" k:KinectTileButton.Click="Grid_Click">
             <Grid.RowDefinitions>
 

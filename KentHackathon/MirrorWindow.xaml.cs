@@ -19,9 +19,10 @@ namespace KentHackathon
     using Newtonsoft.Json;
     using System.Windows.Controls;
     using Microsoft.Kinect.Toolkit.Controls;
-    using System.Collections.Generic;/// <summary>
-                                     /// Interaction logic for MainWindow.xaml
-                                     /// </summary>
+    using System.Collections.Generic;
+    using Microsoft.Kinect.Toolkit;/// <summary>
+                                   /// Interaction logic for MainWindow.xaml
+                                   /// </summary>
     public partial class MirrorWindow : Window
     {
         private IList<Article> ArticleList = new List<Article>();
@@ -113,10 +114,16 @@ namespace KentHackathon
         /// </summary>
         /// 
 
+        private readonly KinectSensorChooser sensorChooser;
+
         public MirrorWindow()
         {
 
             InitializeComponent();
+            this.sensorChooser = new KinectSensorChooser();
+            //this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
+            this.sensorChooser.Start();
+            
             string domain = "https://stoh.io/recScript.php?";
             string getParam = "get_suggests";
             // can only be get_suggests or recalculate
