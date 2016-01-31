@@ -46,6 +46,7 @@
 
                 <RowDefinition Height="12*"/>
                 <RowDefinition Height="3*"/>
+            
 
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Center" Name="viewingbox">

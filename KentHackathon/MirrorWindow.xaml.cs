@@ -519,14 +519,22 @@ namespace KentHackathon
                     }
                 }
 
-
-                layoutGrid.Children.Remove(catalog);
                 DoubleAnimation da = new DoubleAnimation();
                 da.From = 0.2;
                 da.To = 1;
                 da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+
+                DoubleAnimation db = new DoubleAnimation();
+                db.From = 1;
+                db.To = 0;
+                db.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+
+                catalog.BeginAnimation(Catalog.OpacityProperty, db);
+                db.ApplyAnimationClock(Catalog.OpacityProperty, db.CreateClock());
                 Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
                 viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
+                
+                layoutGrid.Children.Remove(catalog);
             }
 
         }
@@ -542,10 +550,21 @@ namespace KentHackathon
             da.From = 0.6;
             da.To = 0.2;
             da.Duration = new Duration(TimeSpan.FromSeconds(0.4));
+
+            DoubleAnimation db = new DoubleAnimation();
+            db.From = 0;
+            db.To = 1;
+            da.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+
+            catalog.Opacity = 0;
+            layoutGrid.Children.Add(catalog);
+
+            catalog.BeginAnimation(Catalog.OpacityProperty, db);
             Cat_Btn.BeginAnimation(KinectTileButton.OpacityProperty, da);
             viewingbox.BeginAnimation(Viewbox.OpacityProperty, da);
 
-            layoutGrid.Children.Add(catalog);
+            
+           
             Grid.SetRowSpan(catalog, 2);
 
 
