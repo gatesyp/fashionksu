@@ -1,0 +1,50 @@
+[
+    {
+        "name": "dirkgroenen/pinterest-api-php",
+        "version": "0.2.5",
+        "version_normalized": "0.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dirkgroenen/Pinterest-API-PHP.git",
+            "reference": "91806d501a6a164ecee5f9720c6344e1858d812c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dirkgroenen/Pinterest-API-PHP/zipball/91806d501a6a164ecee5f9720c6344e1858d812c",
+            "reference": "91806d501a6a164ecee5f9720c6344e1858d812c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.7.*"
+        },
+        "time": "2016-01-09 15:07:19",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DirkGroenen\\Pinterest\\": "src/Pinterest"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Dirk Groenen",
+                "email": "dirk@bitlabs.nl",
+                "homepage": "http://dirkgroenen.nl",
+                "role": "Creator/Developer"
+            }
+        ],
+        "description": "PHP Wrapper for the official Pinterest API",
+        "keywords": [
+            "api",
+            "pinterest",
+            "wrapper"
+        ]
+    }
+]
